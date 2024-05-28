@@ -1,0 +1,17 @@
+<select id="mySelect">
+  <option value="option1">Опція 1</option>
+  <option value="option2">Опція 2</option>
+  <option value="option3">Опція 3</option>
+  <option value="option4">Опція 4</option>
+</select>
+<button onclick="removeSelectedOption()">Видалити обраний елемент</button>
+
+<script>
+function removeSelectedOption() {
+  let select = document.getElementById('mySelect');
+  let selectedIndex = select.selectedIndex;
+  if (selectedIndex >= 0) {
+    select.remove(selectedIndex);
+  }
+}
+</script>

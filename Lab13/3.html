@@ -1,0 +1,26 @@
+<button onclick="changeBackgroundBlue()">Змінити фон на синій</button>
+<button ondblclick="changeBackgroundPink()">Змінити фон на рожевий</button>
+<button onmousedown="changeBackgroundBrown()" onmouseup="changeBackgroundWhite()">Змінити фон на коричневий / білий</button>
+<a href="#" onmouseover="changeBackgroundYellow()" onmouseout="changeBackgroundWhite()">Лінк</a>
+
+<script>
+function changeBackgroundBlue() {
+  document.body.style.backgroundColor = 'blue';
+}
+
+function changeBackgroundPink() {
+  document.body.style.backgroundColor = 'pink';
+}
+
+function changeBackgroundBrown() {
+  document.body.style.backgroundColor = 'brown';
+}
+
+function changeBackgroundWhite() {
+  document.body.style.backgroundColor = 'white';
+}
+
+function changeBackgroundYellow() {
+  document.body.style.backgroundColor = 'yellow';
+}
+</script>

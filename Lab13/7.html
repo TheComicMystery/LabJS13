@@ -1,0 +1,45 @@
+<select id="country">
+  <option value="ger">Germany</option>
+  <option value="usa">USA</option>
+  <option value="ukr">Ukraine</option>
+</select>
+
+<select id="cities"></select>
+
+<p id="selection"></p>
+
+<script>
+let countries = {
+  ger: ['Berlin', 'Munich', 'Hamburg'],
+  usa: ['New York', 'Los Angeles', 'Chicago'],
+  ukr: ['Kyiv', 'Lviv', 'Odesa']
+};
+
+let countrySelect = document.getElementById('country');
+let citiesSelect = document.getElementById('cities');
+let selectionParagraph = document.getElementById('selection');
+
+function updateCities() {
+  let selectedCountry = countrySelect.value;
+  let cities = countries[selectedCountry];
+
+  citiesSelect.innerHTML = '';
+  for (let i = 0; i < cities.length; i++) {
+    let option = document.createElement('option');
+    option.value = cities[i];
+    option.text = cities[i];
+    citiesSelect.add(option);
+  }
+}
+
+function updateSelection() {
+  let selectedCountry = countrySelect.options[countrySelect.selectedIndex].text;
+  let selectedCity = citiesSelect.options[citiesSelect.selectedIndex].text;
+  selectionParagraph.textContent = `Обрана країна: ${selectedCountry}, обране місто: ${selectedCity}`;
+}
+
+countrySelect.addEventListener('change', updateCities);
+citiesSelect.addEventListener('change', updateSelection);
+updateCities();
+updateSelection();
+</script>

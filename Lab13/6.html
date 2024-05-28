@@ -1,0 +1,13 @@
+<p id="dimensions"></p>
+
+<script>
+function updateDimensions() {
+  let dimensions = document.getElementById('dimensions');
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+  dimensions.textContent = `Ширина: ${width}px, Висота: ${height}px`;
+}
+
+window.addEventListener('resize', updateDimensions);
+updateDimensions();
+</script>
